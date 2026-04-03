@@ -26,6 +26,7 @@ interface ChartsSectionProps {
   contributionTrend90Days: TrendPoint[];
   dailyHoursLastWeek: TrendPoint[];
   wakatimeActive: boolean;
+  wakatimeUsername?: string;
   repositoryGrowth: TrendPoint[];
 }
 
@@ -34,6 +35,7 @@ export function ChartsSection({
   contributionTrend90Days,
   dailyHoursLastWeek,
   wakatimeActive,
+  wakatimeUsername,
   repositoryGrowth,
 }: ChartsSectionProps) {
   return (
@@ -54,6 +56,7 @@ export function ChartsSection({
 
       <article className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
         <h3 className="text-sm uppercase tracking-[0.2em] text-slate-300">Coding Hours (Last Week)</h3>
+        {wakatimeUsername ? <p className="mt-1 text-xs text-slate-400">WakaTime @{wakatimeUsername}</p> : null}
         <div className="mt-3">
           <CodingHoursChart data={dailyHoursLastWeek} active={wakatimeActive} />
         </div>

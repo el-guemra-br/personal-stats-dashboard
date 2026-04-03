@@ -7,6 +7,9 @@ interface HeaderProps {
   bio: string;
   location: string;
   githubUrl: string;
+  developerGitHubUrl?: string;
+  developerInstagramUrl?: string;
+  wakatimeProfileUrl?: string;
   portfolioUrl?: string;
   linkedinUrl?: string;
   avatarUrl: string;
@@ -19,6 +22,9 @@ export function Header({
   bio,
   location,
   githubUrl,
+  developerGitHubUrl,
+  developerInstagramUrl,
+  wakatimeProfileUrl,
   portfolioUrl,
   linkedinUrl,
   avatarUrl,
@@ -49,6 +55,26 @@ export function Header({
               <a className="rounded-full border border-white/20 px-3 py-1.5 hover:border-sky-300" href={githubUrl} target="_blank" rel="noreferrer">
                 GitHub
               </a>
+              {developerGitHubUrl ? (
+                <a
+                  className="rounded-full border border-white/20 px-3 py-1.5 hover:border-sky-300"
+                  href={developerGitHubUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Developer GitHub
+                </a>
+              ) : null}
+              {developerInstagramUrl ? (
+                <a
+                  className="rounded-full border border-white/20 px-3 py-1.5 hover:border-sky-300"
+                  href={developerInstagramUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Developer Instagram
+                </a>
+              ) : null}
               {portfolioUrl ? (
                 <a
                   className="rounded-full border border-white/20 px-3 py-1.5 hover:border-sky-300"
@@ -57,6 +83,16 @@ export function Header({
                   rel="noreferrer"
                 >
                   Portfolio
+                </a>
+              ) : null}
+              {wakatimeProfileUrl ? (
+                <a
+                  className="rounded-full border border-white/20 px-3 py-1.5 hover:border-sky-300"
+                  href={wakatimeProfileUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  WakaTime
                 </a>
               ) : null}
               {linkedinUrl ? (

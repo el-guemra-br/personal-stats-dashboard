@@ -193,6 +193,12 @@ Suggested scopes for public data only:
 
 - Add `WAKATIME_API_KEY` from your WakaTime account settings.
 - If omitted, dashboard still works and displays WakaTime as inactive.
+- Set `WAKATIME_USERNAME` to show your WakaTime handle in the coding-hours section and link to your profile.
+
+### Developer Links
+
+- Set `DEVELOPER_GITHUB_USERNAME` to show your GitHub profile link in the dashboard header.
+- Set `DEVELOPER_INSTAGRAM_USERNAME` to show your Instagram profile link in the dashboard header.
 
 ### Twitter (Optional)
 

@@ -127,6 +127,11 @@ export default async function Home({ searchParams }: HomeProps) {
 
   const comparison = contributionMoM(data.github.contributionTrend90Days);
   const stale = data.github.outdated || data.wakatime.outdated || data.social.outdated;
+  const developerGitHubUrl = env.DEVELOPER_GITHUB_USERNAME ? `https://github.com/${env.DEVELOPER_GITHUB_USERNAME}` : undefined;
+  const developerInstagramUrl = env.DEVELOPER_INSTAGRAM_USERNAME
+    ? `https://www.instagram.com/${env.DEVELOPER_INSTAGRAM_USERNAME}`
+    : undefined;
+  const wakatimeProfileUrl = env.WAKATIME_USERNAME ? `https://wakatime.com/@${env.WAKATIME_USERNAME}` : undefined;
 
   return (
     <main id="dashboard-root" className="relative flex-1 overflow-hidden px-4 py-8 sm:px-8 lg:px-12">
@@ -142,6 +147,9 @@ export default async function Home({ searchParams }: HomeProps) {
           bio={env.DASHBOARD_BIO}
           location={env.DASHBOARD_LOCATION}
           githubUrl={data.github.profileUrl}
+          developerGitHubUrl={developerGitHubUrl}
+          developerInstagramUrl={developerInstagramUrl}
+          wakatimeProfileUrl={wakatimeProfileUrl}
           portfolioUrl={env.PORTFOLIO_URL}
           linkedinUrl={env.LINKEDIN_URL}
           avatarUrl={data.github.avatarUrl}
@@ -223,6 +231,7 @@ export default async function Home({ searchParams }: HomeProps) {
             contributionTrend90Days={data.github.contributionTrend90Days}
             dailyHoursLastWeek={data.wakatime.dailyHoursLastWeek}
             wakatimeActive={data.wakatime.active}
+            wakatimeUsername={env.WAKATIME_USERNAME}
             repositoryGrowth={data.github.repositoryGrowth}
           />
         </section>
